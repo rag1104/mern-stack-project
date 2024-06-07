@@ -1,15 +1,18 @@
-//sETS
+const  getcolor = () =>{
+    const randomNumber = Math.floor(Math.random() * 16777215);
+    const randomCodes = "#" +randomNumber.toString(16);
+    document.body.style.backgroundColor = randomCodes;
+    document.getElementById("color-code").innerText = randomCodes;
 
-const arr = [10,30,30,340,340,20,10]
-console.log(arr.length);
+    navigator.clipboard.writeText(randomCodes)
 
-const s =new Set([10,20,30,40]);
-s.add(60)
-s.add("hello developers");
-console.log(s);
-
-length =0;
-for(let ele of s){
-    length++;
 }
-console.log(length);
+
+    ///event calling
+
+    document.getElementById("btn").addEventListener(
+        "click",
+        getcolor
+
+    )
+    getcolor();
